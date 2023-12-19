@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         float speed = 9;
         myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
 
-        if (transform.position.y < 10)
+        if (transform.position.y < 11)
             {
                 transform.position = new Vector3(2, 16, 0);
             }
@@ -31,6 +31,7 @@ public class Ball : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         audioData.PlayOneShot(audioData.clip,1);
+        myRigidbody.velocity = myRigidbody.velocity + new Vector3(0, 2, 0);
     }
 
 }
